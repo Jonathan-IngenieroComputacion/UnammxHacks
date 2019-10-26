@@ -1,0 +1,19 @@
+<?php
+<?php
+$link=@mysql_connect('localhost','root','');
+$db=mysql_select_db('registro');
+$nom=$_POST['a'];
+$ape=$_POST['ab'];
+$domicilio=$_POST['b'];
+$correo=$_POST['c'];
+$celular=$_POST['d'];
+$rfc=$_POST['e'];
+$curp=$_POST['f'];
+$naci=$_POST['g'];
+$edad=$_POST['h'];
+$nacionalidad=$_POST['i'];
+$estado=$_POST['j'];
+$sql="INSERT INTO usuarios VALUES('$nom','$ape','$domicilio','$correo','$celular','$rfc','curp','naci','edad','nacionalidad','estado')";
+$ejec=mysql_query($sql);
+?>
+?>
