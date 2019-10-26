@@ -1,7 +1,10 @@
 <?PHP 
 require_once '../config/config.php';
-require_once '../model/conexion.php';
-
+require_once 'conexion.php';
+if (isset($_SESSION['usuario'])) {
+	header('Location: ../view/documents.php');
+	die();
+}
 if (isset($_POST)) {
 	// Array de errores
 	$errores = array();
@@ -11,7 +14,7 @@ if (isset($_POST)) {
 	$apellidos = isset($_POST['apellidos']) ? filter_var(trim($_POST['apellidos']), FILTER_SANITIZE_STRING) :false;
 	$email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING) :false;
 	$password = isset($_POST['password']) ? filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING) :false;
-	$password2 = isset($_POST['password2']) ? filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING) :false;
+	$password2 = isset($_POST['password2']) ? filter_var(trim($_POST['password2']), FILTER_SANITIZE_STRING) :false;
 	$curp = isset($_POST['curp']) ? filter_var(trim($_POST['curp']), FILTER_SANITIZE_STRING) :false;
 	$rfc = isset($_POST['rfc']) ? filter_var(trim($_POST['rfc']), FILTER_SANITIZE_STRING) :false;
 	$fecha = isset($_POST['fecha']) ? date('Y-m-d',strtotime($_POST['fecha'])) : false;
@@ -59,7 +62,7 @@ if (isset($_POST)) {
 		$email_validado = true;
 
 		/*Consulta para verificar datos repetidos*/
-		$comprobar_email = $conexion->prepare('SELECT * FROM usuarios WHERE email = :email LIMIT 1');
+		$comprobar_email = $conexion->prepare('SELECT * FROM usuarios WHERE correo = :email LIMIT 1');
 		$comprobar_email->execute(array(':email' => $email));
 
 		// El metodo fetch nos va a devolver el resultado o false en caso de que no haya resultado.
@@ -93,29 +96,31 @@ if (isset($_POST)) {
 	$datos['name'] = $name;
 	$datos['apellidos'] = $apellidos;
 	$datos['email'] = $email;
+	$datos['curp'] = $curp;
+	$datos['rfc'] = $rfc;
+	$datos['domicilio'] = $domicilio;
 
 	/*Ingresando Datos*/
 	$guardar_usuario = false;
-
-	if (count($errores) == 0 && $accedido == true) {
+	if (count($errores) == 0 && $passwords_validate == true) {
 		$guardar_usuario = true;
 
 		//Cifrar Contraseña
 		$password_segurity = password_hash($password, PASSWORD_BCRYPT ,	['cost' => 4]);
-		$sql = "INSERT INTO usuarios VALUES(null, :nombre, :apellidos, :email, :password_segurity , :curp, :rfc, :nacimiento, :domicilio, :edad, :sexo, :nacionalidad, :estadocivil;";
+		$sql = "INSERT INTO usuarios VALUES(null, :nombre, :apellidos, :email, :password_segurity, :curp, :rfc, :nacimiento, :domicilio, :edad, :sexo, :nacionalidad, :estadocivil);";
 		$insertar = $conexion->prepare($sql);
 		$insertar->execute(array(':nombre' => $name, ':apellidos' => $apellidos, ':email' => $email, ':password_segurity' => $password_segurity, ':curp' => $curp, ':rfc' => $rfc, ':nacimiento' => $fecha, ':domicilio' => $domicilio, ':edad' => $edad, ':sexo' => $sexo, ':nacionalidad' => $nacionalidad, ':estadocivil' => $estadoCivil));
 		if($insertar){
-			header('Location: ../login_admin.php');
+			header('Location: ../index.php');
 		}else{
 			$_SESSION['errores']['general'] = 'Fallo al guardar el usuario!!';
-			header('location: ../login_admin.php');
+			header('location: ../index.php');
 		}
 
 	}else{
 		$_SESSION['datos'] = $datos;
 		$_SESSION['errores'] = $errores;
-		header('Location: ../view/session/registro.php');
+		header('Location: ../index.php');
 	}
 }
 ?>

@@ -19,5 +19,9 @@ function borrarErrores(){
 
 		unset($_SESSION['errores']);
 	}
+	if(isset($_SESSION['datos'])){
+
+		unset($_SESSION['datos']);
+	}
 }
 ?>
