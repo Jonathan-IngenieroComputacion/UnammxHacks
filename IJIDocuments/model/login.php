@@ -57,8 +57,11 @@ if (isset($_POST)) {
 
 	$nombre_Array = $resultado_busqueda['nombre'];
 	$apellidos_Array = $resultado_busqueda['apellidos'];
+	$id_Array = $resultado_busqueda['ID'];
 	$usuario['nombre'] = $nombre_Array;
 	$usuario['apellidos'] = $apellidos_Array;
+	$usuario['id'] = $id_Array;
+
 
 	if (count($errores_log) == 0) {
 		if ($contra_validado == true && $correo_validado == true) {

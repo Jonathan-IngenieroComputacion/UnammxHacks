@@ -1,0 +1,70 @@
+body{
+	background-color: snow;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+	font-size: 70px;
+	text-align: left;
+	margin-top: 10px;
+	padding: 15px 32px;
+	color: snow;
+}
+.datos{
+	color: #fcfaf9;
+	font-size: 20px;
+	margin-top: 10px;
+	padding: 15px 32px;
+}
+.tarjeta{
+	text-align: left;
+	background-color:#1b3022;
+	position: absolute;
+	border: 5px;
+	border-style: solid;
+	padding: 5px 10px;
+	border-radius: 25px;
+    left:600px;
+    top: 150px;
+	height: 500px;
+	width: 1000px;
+	left: 8%;
+	top: 85px;
+}
+
+.datos{
+	left: 10px;
+	margin-top: -2%;
+}
+.foto{
+	text-align: central;
+	background-color: snow;
+	position: absolute;
+	border: 5px;
+	border-style: solid;
+	padding: 5px 10px;
+	border-radius: 25px;
+	right:20px;
+	height: 200px;
+	width: 150px;
+	top: 5px;
+}
+.fotito{
+	left: 10px;
+	margin-top: -4%;
+	text-align: center;
+	margin-top: 55px;
+	font-size: 23px;
+}
+.imagen{
+	text-align: central;
+	position: absolute;
+	border: 5px;
+	border-style: solid;
+	padding: 5px 10px;
+	border-radius: 25px;
+	right:-3px;
+	margin-top: -55px;
+	height: 200px;
+	width: 150px;
+	top: 50px;
+}

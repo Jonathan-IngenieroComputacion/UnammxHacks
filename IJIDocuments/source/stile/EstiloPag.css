@@ -1,0 +1,133 @@
+body{
+    background-color: #0A100D;
+  
+  }
+header{
+	text-align: center;
+}
+.boton{
+	background-color: #1c3144;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 23px;
+  top: 1cm; 
+}
+.botoncurp{
+	background-color: #A40606;
+	border: none;
+  color: white;
+  height: 3cm;
+  width: 15cm;
+  padding: 15px 32px;
+  text-align: center;
+  position: absolute;
+  left: 9.5cm;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px, ;
+font-size: 18px;
+  cursor: pointer;
+  border: 5px;
+}
+.botondoc{
+	background-color: #A40606;
+	border: none;
+  color: white;
+  height: 10cm;
+  width: 15cm;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left: 9.5cm;
+  font-size: 18px;
+  cursor: pointer;
+  border: 5px;
+ -webkit-box-shadow: 6px 6px 9px #999;
+ -moz-box-shadow: 6px 6px 9px #999;
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+  
+}
+.botonine{
+  background-color: #A40606;
+	border: none;
+  color: white;
+  height: 16cm;
+  width: 15cm;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  height: 7cm;
+  width: 15cm;
+  left: 9.5cm;
+font-size: 18px;
+  cursor: pointer;
+  border: 5px;
+  -webkit-box-shadow: 6px 6px 9px #999;
+ -moz-box-shadow: 6px 6px 9px #999;
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+}
+h1{
+	font-size: 50px;
+	text-align: left;
+	color: #78e5d2;
+}
+p{
+	font-size: 200px;
+	text-align: center;
+	color: #fffafa;
+}
+.cuadrado{
+  height: 500px;
+  width: 400px;
+  background-color: #8892c6;
+  position: absolute;
+  top: 5cm;
+  left: 1cm;
+  -webkit-box-shadow: 6px 6px 9px #999;
+ -moz-box-shadow: 6px 6px 9px #999;
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+
+}
+.cuadro2{
+  height: 5cm;
+  width: 5cm;
+  position: absolute;
+  top: 6cm;
+  left: 1.5cm;
+  background-color: aliceblue;
+  -webkit-box-shadow: 6px 6px 9px #999;
+ -moz-box-shadow: 6px 6px 9px #999;
+ filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+}
+.cuadrodefondo{
+    background-color: #cdcdcd;
+    border: none;
+    color: #fffafa;
+    height: 16cm;
+    width: 15cm;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    height: 35cm;
+    width: 20cm;
+    left: 7cm;
+    top: 3.5cm;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-box-shadow  : 6px 6px 9px #999;
+    -moz-box-shadow: 6px 6px 9px #999;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=4);
+}
